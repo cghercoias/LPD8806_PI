@@ -41,7 +41,7 @@ To install it, run the following commands:
 	cd py-spidev/
 	sudo python setup.py install
 
-Then set the second parameter of LEDStrip to True to enable py-spidev
+Then set the second parameter of LEDStrip to True to enable py-spidev.
 In the folder LPD8806_PI, run "python setup.py install" to install the software.
 
     git clone https://github.com/adammhaile/RPi-LPD8806.git
