@@ -1,0 +1,11 @@
+from bootstrap import *
+from raspledstrip.animation import *
+
+led.fill(Color(255,0,0),0,3)
+led.update()
+num = 0
+while(num<10):
+	num = num + 1
+led.fill(Color(255,0,0),3,4)
+led.fill(Color(0,0,0),0,1)
+led.update()

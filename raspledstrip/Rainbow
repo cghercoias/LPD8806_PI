@@ -1,0 +1,17 @@
+class RainbowCycle(BaseAnimation):
+led.update(
+    """Generate rainbow wheel equally distributed over strip."""
+
+    def __init__(self, led_strip, start=0, end=0):
+        super(RainbowCycle, self).__init__(led_strip, start, end)
+
+    def step(self, amt=1):
+        for i in range(self._size):
+            color = (i * (384 / self._size) + self._step) % 384
+            self._led.set(self._start + i, wheel_color(color))
+
+        self._step += amt
+        overflow = self._step - 384
+        if overflow >= 0:
+            self._step = overflow
+

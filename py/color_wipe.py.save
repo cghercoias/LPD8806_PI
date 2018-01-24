@@ -1,0 +1,35 @@
+#setup colors for wipe and chase
+colors = [
+    Color(255, 0, 0),
+    Color(0, 255, 0),
+    Color(0, 0, 255),
+    Color(255, 255, 255),
+]
+
+for c in range(4):
+    anim = ColorWipe(led, colors[c])
+
+    for i in range(led_count):
+        anim.step()
+        led.update()
+    #sleep(0.03)
+
+led.fill_off()
+#setup colors for wipe and chase
+colors = [
+    Color(255, 0, 0),
+    Color(0, 255, 0),
+    Color(0, 0, 255),
+    Color(255, 255, 255),
+]
+
+for c in range(4):
+    anim = ColorWipe(led, colors[c])
+
+    for i in range(led_count):
+        anim.step()
+        led.update()
+    #sleep(0.03)
+
+led.fill_off()
+

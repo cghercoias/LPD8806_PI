@@ -1,0 +1,28 @@
+from bootstrap import *
+from raspledstrip.animation import *
+
+
+R = 0 #Red
+G = 255 #Green
+B = 0 #Blue
+x = 0
+NledB = 5 #number of LED in block	
+NledT = 50 #number of total LED
+NledE = x+NledB
+while (1>0):
+        while (NledE< NledT-1): #going there
+                NledE = x+NledB
+                led.fill(Color(R,B,G),x,x+NledB)
+                led.fill(Color(R,B,G),0,x-1)
+                led.update()
+                x = x +1
+                print x
+        #while (startnum > 0): #going back
+         #      endnum = startnum+numLED
+          #      led.fill(Color(0,255,0),startnum-1,endnum)
+           #     led.fill(Color(0,0,0),endnum+1,n)
+            ###    led.update()
+               # startnum = startnum-1
+                #print startnum
+
+

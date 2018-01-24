@@ -1,0 +1,7 @@
+from bootstrap import *
+from raspledstrip.animation import *
+
+led.fill(Color(255,0,0),0,0)
+led.update()
+time.sleep(1)
+

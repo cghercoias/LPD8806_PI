@@ -1,0 +1,15 @@
+from bootstrap import *
+from raspledstrip.animation import *
+
+
+anim = Wave(led, Color(255, 0, 0), 4)
+
+
+for i in range(led.last_index):
+    anim.step()
+    led.update()
+#sleep(0.15)
+
+
+led.all_off()
+

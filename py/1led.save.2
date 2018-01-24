@@ -1,0 +1,36 @@
+
+from bootstrap import *
+from raspledstrip.animation import *
+
+n = 48
+c = 0
+num = 1
+s=10
+while (1>0):
+	while (num < 49):
+		c = 0
+		while ( c < 1):
+			led.fill(Color(255,0,0),num,num+s)
+			led.update()
+			c = c  + 1
+			print c
+		led.all_off()
+		num = num+1
+		print num
+	while (num > 0):
+	        c = 0 led.fill(Color(255,0,0),num,num+s)
+                        led.update()
+
+	        while ( c < 1):
+	                led.fill(Color(255,0,0),num-s,num)
+	                led.update()
+	                c = c  + 1
+	                print c
+	        led.all_off()
+	        num = num-1
+	        print num
+			while(num<=s)
+				
+led.all_off()
+
+

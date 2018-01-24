@@ -1,0 +1,8 @@
+from bootstrap import *
+from raspledstrip.animation import *
+
+
+n = 48
+
+led.fill(Color(0,255,0),n-23,n)
+led.update()
