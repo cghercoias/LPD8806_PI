@@ -1,5 +1,5 @@
 '''
-https://github.com/cghercoias/LPD8806_PI/blob/master/IR-sensor-interfacing-with-raspberry-pi-circuit-diagram.png
+./IR-sensor-interfacing-with-raspberry-pi-circuit-diagram.png
 '''
 
 import RPi.GPIO as IO
