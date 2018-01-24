@@ -41,16 +41,17 @@ To install it, run the following commands:
 	cd py-spidev/
 	sudo python setup.py install
 
-Then set the second parameter of LEDStrip to True to enable py-spidev
+Then set the second parameter of LEDStrip to True to enable py-spidev:
 
-    	git clone https://github.com/adammhaile/RPi-LPD8806.git
-    	cd RPi-LPD8806
+    git clone https://github.com/adammhaile/RPi-LPD8806.git
+    cd RPi-LPD8806
 	python setup.py install
    	python example.py
     
 You should see your LED strip run through a number of animations. 
 
 Here is a basic program that will fill the entire strip Red:
+	
 	~$ python
 	Python 2.7.13 (default, Nov 24 2017, 17:33:09)
 	[GCC 6.3.0 20170516] on linux2
