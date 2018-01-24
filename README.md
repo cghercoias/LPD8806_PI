@@ -33,6 +33,9 @@ but I would NOT recommend it. Using the microUSB power connector it's a much saf
 Also, while it *should* work without it, to be safe you should add a level converter 
 between the RaspberryPi and the strip's data lines. This will also help you have longer runs.
 
+cd to the LPD8806_PI directory where requirements.txt is located.
+run: pip install -r requirements.txt in your shell.
+
 In some cases, using py-spidev can have better performance but is compeltely optional. 
 To install it, run the following commands:
 
