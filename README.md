@@ -1,28 +1,40 @@
 Overview 
 ====
-A Python library for the Raspberry Pi to drive LPD8806 based RGB light strips
+A Python library for the Raspberry Pi to drive LPD8806 based RGB light strips.
+
 Initial code from: https://github.com/Sh4d/LPD8806
 
 Getting Started 
-----
-First off, you need to enable SPI if it hasn't been already. The easiest way to do this in Raspbian is via raspi-config. At the command line, type:
+---------------
+First off, you need to enable SPI if it hasn't been already. 
+The easiest way to do this in Raspbian is via raspi-config. 
+At the command line, type:
 
 	sudo raspi-config
 	
-It will load a menu with a blue background. Arrow down to option 8, "Advanced Options" and hit Enter. Then select option A5 "SPI" and hit Enter again. It will ask you if you want to enable SPI, select yes. Once back to the main menu, select <Finish> and you're done!
+It will load a menu with a blue background. 
+Arrow down to option 8, "Advanced Options" and hit Enter. 
+Then select option A5 "SPI" and hit Enter again. 
+It will ask you if you want to enable SPI, select yes. 
+Once back to the main menu, select <Finish> and you're done!
 
 Next, wiring your LPD8806 strips.
 Connect as follows:
 
-	Pi MOSI (pin 10) -> Strand DI
-	Pi SCLK (pin 12) -> Strand CI
+	RaspberryPi MOSI (pin 10) -> Strand DI (DataIn)
+	RaspberryPi SCLK (pin 12) -> Strand CI (ClockIn)
 
 Most strips use around 10W per meter (for ~32 LEDs/m) or 2A at 5V.
-The Raspberry Pi cannot even come close to this so a larger power supply is required, however, due to voltage loss along long runs you will need to put in a new power supply at least every 5 meters. Technically you can power the Raspberry Pi through the GPIO pins and use the same supply as the strips, but I would recommend just using the USB power as it's a much safer option.
+The RaspberryPi cannot even come close to this so a larger power supply is required, 
+however, due to voltage loss along long runs you will need to put in a new power supply at least every 5 meters.
+Technically you can power the RaspberryPi through the GPIO pins and use the same supply as the strips, 
+but I would NOT recommend it. Using the microUSB power connector it's a much safer option.
 
-Also, while it *should* work without it to be safe you should add a level converter between the Raspberry Pi and the strip's data lines. This will also help you have longer runs.
+Also, while it *should* work without it, to be safe you should add a level converter 
+between the RaspberryPi and the strip's data lines. This will also help you have longer runs.
 
-In some cases, using py-spidev can have better performance but is compeltely optional. To install, run the following commands:
+In some cases, using py-spidev can have better performance but is compeltely optional. 
+To install it, run the following commands:
 
 	sudo apt-get install python-dev
 	git clone https://github.com/doceme/py-spidev.git
@@ -31,24 +43,30 @@ In some cases, using py-spidev can have better performance but is compeltely opt
 
 Then set the second parameter of LEDStrip to True to enable py-spidev
 
-    git clone https://github.com/adammhaile/RPi-LPD8806.git
-    cd RPi-LPD8806
+    	git clone https://github.com/adammhaile/RPi-LPD8806.git
+    	cd RPi-LPD8806
 	python setup.py install
-    python example.py
+   	python example.py
     
 You should see your LED strip run through a number of animations. 
 
 Here is a basic program that will fill the entire strip Red:
-
-    from raspledstrip.ledstrip import *
-    led = LEDStrip(32)
-    led.fillRGB(255,0,0)
-    led.update()
+	~$ python
+	Python 2.7.13 (default, Nov 24 2017, 17:33:09)
+	[GCC 6.3.0 20170516] on linux2
+	Type "help", "copyright", "credits" or "license" for more information.
+	>>>from raspledstrip.ledstrip import *
+    	>>>led = LEDStrip(48)
+    	>>>led.fillRGB(255,0,0)
+    	>>>led.update()
     
-LEDStrip() initializes the class to control the strip and takes the number of LEDs as the argument. The arguments for fillRGB() are Red (0-255), Blue (0-255) and Green (0-255). Finally update() writes the colors out to the strip. The LED strip won't change until update is called (common mistake). 
+LEDStrip() initializes the class to control the strip and takes the number of LEDs as the argument. 
+The arguments for fillRGB() are Red (0-255), Blue (0-255) and Green (0-255). 
+Finally update() writes the colors out to the strip. 
+The LED strip won't change until update is called (common mistake). 
 
 Animations
-----
+----------
 The library contains a number of animations. Below is a list of animations available.
 * Rainbow
 * Color Wipe
@@ -62,7 +80,10 @@ More Info
 ---------
 
 Download, extract, then run the help:
-Launch python
+	~$ python
+	Python 2.7.13 (default, Nov 24 2017, 17:33:09)
+	[GCC 6.3.0 20170516] on linux2
+	Type "help", "copyright", "credits" or "license" for more information.
     >>> import LPD8806
     >>> help(LPD8806)
 
