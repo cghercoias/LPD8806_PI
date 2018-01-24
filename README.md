@@ -1,9 +1,7 @@
 Overview 
 ====
-A Python library for the Raspberry Pi (or Beaglebone Black) to drive LPD8806 based RGB light strips
+A Python library for the Raspberry Pi to drive LPD8806 based RGB light strips
 Initial code from: https://github.com/Sh4d/LPD8806
-
-See a demo video here: http://www.youtube.com/watch?v=g5upsgqASiY
 
 Getting Started 
 ----
@@ -16,8 +14,8 @@ It will load a menu with a blue background. Arrow down to option 8, "Advanced Op
 Next, wiring your LPD8806 strips.
 Connect as follows:
 
-	Pi MOSI -> Strand DI
-	Pi SCLK -> Strand CI
+	Pi MOSI (pin 10) -> Strand DI
+	Pi SCLK (pin 12) -> Strand CI
 
 Most strips use around 10W per meter (for ~32 LEDs/m) or 2A at 5V.
 The Raspberry Pi cannot even come close to this so a larger power supply is required, however, due to voltage loss along long runs you will need to put in a new power supply at least every 5 meters. Technically you can power the Raspberry Pi through the GPIO pins and use the same supply as the strips, but I would recommend just using the USB power as it's a much safer option.
@@ -33,8 +31,6 @@ In some cases, using py-spidev can have better performance but is compeltely opt
 
 Then set the second parameter of LEDStrip to True to enable py-spidev
 
-Assuming your Raspberry Pi has a connection to the internet, run the following. 
-
     git clone https://github.com/adammhaile/RPi-LPD8806.git
     cd RPi-LPD8806
 	python setup.py install
@@ -42,7 +38,7 @@ Assuming your Raspberry Pi has a connection to the internet, run the following.
     
 You should see your LED strip run through a number of animations. 
 
-Here is a basic program that will fill the entire strip red
+Here is a basic program that will fill the entire strip Red:
 
     from raspledstrip.ledstrip import *
     led = LEDStrip(32)
@@ -63,9 +59,10 @@ The library contains a number of animations. Below is a list of animations avail
 
 
 More Info
-----
-Download, extract, then run the help:
+---------
 
+Download, extract, then run the help:
+Launch python
     >>> import LPD8806
     >>> help(LPD8806)
 
@@ -81,4 +78,3 @@ Download, extract, then run the help:
  
 * ColorHSV is there for easily fading through a natural color progression. However, all methods take a Color object, so call ColorHSV.getColorRGB() before passing to any of the set, fill, or animation methods.
 
-* If using on a BeagleBond Black be sure to enable spidev via a device tree overlay. Tutorials are found (here)[http://learn.adafruit.com/introduction-to-the-beaglebone-black-device-tree/compiling-an-overlay] and (here)[http://elinux.org/BeagleBone_Black_Enable_SPIDEV]. # LPD8806_PI
