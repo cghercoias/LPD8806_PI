@@ -43,8 +43,8 @@ To install it, run the following commands:
 
 Then set the second parameter of LEDStrip to True to enable py-spidev
 
-    	git clone https://github.com/adammhaile/RPi-LPD8806.git
-    	cd RPi-LPD8806
+    git clone https://github.com/adammhaile/RPi-LPD8806.git
+    cd RPi-LPD8806
 	python setup.py install
    	python example.py
     
@@ -56,14 +56,14 @@ Here is a basic program that will fill the entire strip Red:
 	[GCC 6.3.0 20170516] on linux2
 	Type "help", "copyright", "credits" or "license" for more information.
 	>>>from raspledstrip.ledstrip import *
-    	>>>led = LEDStrip(48)
-    	>>>led.fillRGB(255,0,0)
-    	>>>led.update()
+	>>>led = LEDStrip(48)
+	>>>led.fillRGB(255,0,0)
+	>>>led.update()
     
 LEDStrip() initializes the class to control the strip and takes the number of LEDs as the argument. 
-The arguments for fillRGB() are Red (0-255), Blue (0-255) and Green (0-255). 
-Finally update() writes the colors out to the strip. 
-The LED strip won't change until update is called (common mistake). 
+The arguments for led.fillRGB() are Red (0-255), Blue (0-255) and Green (0-255). 
+Finally led.update() writes the colors out to the strip. 
+The LED strip won't change until led.update is called (common mistake). 
 
 Animations
 ----------
