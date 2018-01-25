@@ -1,3 +1,5 @@
+#!/usr/bin/python
+
 from bootstrap import *
 from raspledstrip.animation import *
 numLED = 3 #ONLY CHANGE THIS NUMBER!!!!!!!

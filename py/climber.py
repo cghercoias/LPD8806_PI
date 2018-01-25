@@ -1,4 +1,4 @@
-# !/usr/bin/python
+#!/usr/bin/python
 
 from bootstrap import *
 from raspledstrip.animation import *
