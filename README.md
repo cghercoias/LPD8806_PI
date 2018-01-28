@@ -94,7 +94,7 @@ More Info
 
 Download, extract, then run the help:
 ```
-~$ python
+pi@raspberrypi~$ python
 Python 2.7.13 (default, Nov 24 2017, 17:33:09)
 [GCC 6.3.0 20170516] on linux2
 Type "help", "copyright", "credits" or "license" for more information.
